@@ -1,3 +1,4 @@
+このリポジトリは「BoozeDiary」のバックエンドのリポジトリです。フロントエンドは[こちら](https://github.com/hattoriryuki/booze-diary-frontend)
 # BoozeDiary
 
 ## サービス概要
