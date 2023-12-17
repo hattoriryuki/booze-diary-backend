@@ -1,8 +1,9 @@
+このリポジトリは「BoozeDiary」のバックエンドのリポジトリです。フロントエンドは[こちら](https://github.com/hattoriryuki/booze-diary-frontend)
 # BoozeDiary
 
 ## サービス概要
 
-お酒好きのための SNS です。
+お酒好きのためのSNSです。
 素敵なお酒ライフの手助けとなるサービスです。
 
 ### ▼ サービス URL
