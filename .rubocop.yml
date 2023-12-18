@@ -1,0 +1,53 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  DisplayCopNames: true
+  Exclude:
+    - "Gemfile"
+    - "bin/**/*"
+    - "config/environments/*"
+    - "config/locales/*"
+    - "db/**/*"
+    - "log/**/*"
+    - "nginx/**/*"
+    - "public/**/*"
+    - "storage/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+
+Metrics:
+  Enabled: false
+
+Style:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+Rails/Pluck:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/FilePath:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
