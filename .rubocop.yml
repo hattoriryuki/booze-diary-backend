@@ -9,8 +9,8 @@ AllCops:
   Exclude:
     - "Gemfile"
     - "bin/**/*"
-    - "config/environments/*"
-    - "config/locales/*"
+    - "config/**/*"
+    - "config.ru"
     - "db/**/*"
     - "log/**/*"
     - "nginx/**/*"
