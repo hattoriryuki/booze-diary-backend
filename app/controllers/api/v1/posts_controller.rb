@@ -8,17 +8,19 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(post_params)
+    request.session_options[:skip] = true
+    post = current_api_v1_user.posts.build(post_params);
+
     if post.save
       render json: post
     else
-      render json: post.erros, status: 422
+      render json: post.errors, status: 422
     end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:name, :quantity, :price, :recommend, :image, :user)
+    params.permit(:name, :quantity, :price, :recommend, :image)
   end
 end
