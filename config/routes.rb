@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       namespace :auth do
         resources :sessions, only: %i[index]
       end
+      resources :users, only: %i[show]
+      resources :posts, only: %i[new create index show]
     end
   end
 end
