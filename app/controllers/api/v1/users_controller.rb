@@ -1,6 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   def show
-    render json: User.find(params[:id])
+    user = User.find(params[:id])
+    render json: user.to_json(only: [:id, :name, :image], include: :posts)
   end
 
   def index
