@@ -4,7 +4,8 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def show
-    render json: Post.find(params[:id])
+    post = Post.find(params[:id])
+    render json: post.to_json(include: { user: { only: [:id, :name, :image] } })
   end
 
   def create
