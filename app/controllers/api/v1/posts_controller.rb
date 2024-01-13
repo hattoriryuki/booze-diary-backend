@@ -1,10 +1,12 @@
 class Api::V1::PostsController < ApplicationController
   def index
-    render json: Post.all.includes(:user).order(created_at: :desc)
+    posts = Post.all.includes(:user).order(created_at: :desc)
+    render json: posts.to_json(include: { user: { only: [:id, :name, :image] } })
   end
 
   def show
-    render json: Post.find(params[:id])
+    post = Post.find(params[:id])
+    render json: post.to_json(include: { user: { only: [:id, :name, :image] } })
   end
 
   def create
