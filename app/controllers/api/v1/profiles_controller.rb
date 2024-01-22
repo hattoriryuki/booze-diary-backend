@@ -6,9 +6,8 @@ class Api::V1::ProfilesController < ApplicationController
     render json: @user.to_json(only: [:id, :name, :image, :email], include: :posts)
   end
 
-  def end; end
-
   def update
+    request.session_options[:skip] = true
     if @user.update(user_params)
       render json: @user
     else
