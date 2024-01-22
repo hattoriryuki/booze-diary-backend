@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         resources :sessions, only: %i[index, destroy]
       end
       resources :users, only: %i[show]
+      resources :profiles, only: %i[show update]
       resources :posts, only: %i[new create index show]
     end
   end
