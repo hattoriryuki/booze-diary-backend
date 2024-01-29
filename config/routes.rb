@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       end
       resources :users, only: %i[show]
       resources :profiles, only: %i[show update]
-      resources :posts, only: %i[new create index show]
+      resources :posts, except: %i[edit]
     end
   end
 end
