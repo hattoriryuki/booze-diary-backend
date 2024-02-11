@@ -13,8 +13,10 @@ class Api::V1::Auth::SessionsController < Devise::SessionsController
   end
 
   def guest_sign_in
-    user = User.guest
-    sign_in user
-    render json: user
+    @resource = User.guest
+    sign_in @resource
+    @token = @resource.create_token
+    @resource.save!
+    render json: @resource
   end
 end
