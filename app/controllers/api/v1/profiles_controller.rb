@@ -1,5 +1,6 @@
 class Api::V1::ProfilesController < ApplicationController
   before_action :set_user, only: %i[show update]
+  before_action :authenticate_user!, only: %i[update]
 
   def show
     render json: @user.to_json(only: [:id, :name, :image, :email], include: :posts)

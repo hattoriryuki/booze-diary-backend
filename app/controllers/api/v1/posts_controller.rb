@@ -1,5 +1,6 @@
 class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: %i[show update destroy]
+  before_action :authenticate_user!, only: %i[create update destroy]
   def index
     posts = Post.all.includes(:user).order(created_at: :desc)
     render json: posts.to_json(include: { user: { only: [:id, :name, :image] } })
