@@ -22,6 +22,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def update
+    request.session_options[:skip] = true
     if @post.update(post_params)
       render json: @post
     else
@@ -30,6 +31,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def destroy
+    request.session_options[:skip] = true
     @post.destroy
     render json: @post
   end
